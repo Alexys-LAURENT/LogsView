@@ -1,0 +1,12 @@
+{
+  "extends": "@adonisjs/tsconfig/tsconfig.app.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./build",
+    // alias that helps shadcn ui cli (components.json) to know where to place the components
+    "paths": {
+      "@/*": ["./inertia/*"]
+    }
+  },
+  "exclude": ["./inertia/**/*", "node_modules", "build"]
+}
