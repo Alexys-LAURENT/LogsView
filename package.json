@@ -5,6 +5,8 @@
   "type": "module",
   "license": "UNLICENSED",
   "scripts": {
+    "start-prod": "pm2 start ecosystem.config.cjs",
+    "stop-prod": "pm2 delete logs-view",
     "start": "node bin/server.js",
     "build": "node ace build",
     "dev": "node ace serve --hmr",
