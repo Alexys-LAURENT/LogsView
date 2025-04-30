@@ -31,7 +31,10 @@ const LogsPage = (props: InferPageProps<LogController, 'index'>) => {
         />
       </ResizablePanel>
       <ResizableHandle withHandle />
-      <ResizablePanel defaultSize={defaultSizeRight} className="min-w-[15px]">
+      <ResizablePanel defaultSize={defaultSizeRight}
+      // window.innerHeight - navbar - topbar
+      className="min-w-[15px] h-[calc(100svh-57px-65px)] max-h-[calc(100svh-57px-65px)]"
+      >
         <LogsRightSection selectedLog={selectedLog} />
       </ResizablePanel>
     </ResizablePanelGroup>

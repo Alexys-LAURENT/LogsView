@@ -43,14 +43,16 @@ export const logsTableColumns: ColumnDef<Log>[] = [
     id: 'Content',
     accessorKey: 'content',
     header: 'Content',
-    cell: ({ row }) => <span className="text-ellipsis line-clamp-2">{row.original.content}</span>,
+    cell: ({ row }) => (
+      <span className="text-ellipsis line-clamp-2 max-w-[500px]">{row.original.content}</span>
+    ),
   },
   {
     id: 'Additional',
     accessorKey: 'additional',
     header: 'Additional',
     cell: ({ row }) => (
-      <span className="text-ellipsis line-clamp-2">{row.original.additional}</span>
+      <span className="text-ellipsis line-clamp-2 max-w-[400px]">{row.original.additional}</span>
     ),
   },
   {
