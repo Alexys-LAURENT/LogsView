@@ -50,7 +50,6 @@ router
   .group(() => {
     router.post('/login', [SessionController, 'store'])
     router.post('/logout', [SessionController, 'destroy']).use(middleware.auth())
-    router.get('/logs', [LogController, 'get'])
     router.post('/logs', [LogController, 'store'])
     router.put('/hosts/:idHost', [HostsController, 'update']).use(middleware.auth())
     router.post('/hosts', [HostsController, 'create']).use(middleware.auth())
