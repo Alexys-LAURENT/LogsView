@@ -39,20 +39,6 @@ export default class LogController {
     }
   }
 
-  async get({ request, response }: HttpContext) {
-    try {
-      const validQs = await getLogsQSValidator.validate(request.qs())
-      const logs = await this.logRepository.getAll(validQs)
-      return response.json(logs)
-    } catch (error) {
-      console.error('log_controller::get ', error)
-      return response.status(500).json({
-        error: 'Une erreur est survenue lors de la récupération des logs',
-        messages: error.messages,
-      })
-    }
-  }
-
   async store({ request, response }: HttpContext) {
     try {
       const logData = await request.validateUsing(logStoreValidator)
